@@ -375,3 +375,21 @@ ul.privacy li a:hover {
         padding: 0 4px;
         display: inline-block
     }
+
+    #emergency-button {
+        background-color: #e74c3c;
+        color: #ffffff;
+        padding: 20px 40px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+      }
+    
+      #emergency-button:hover {
+        background-color: #c0392b;
+      }

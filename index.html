@@ -25,31 +25,40 @@
         <div class="clearfix header">
             <div class="main-container clearfix">
                 <div class="website">
-                    <a href="#" target="_blank">title</a>
+                    <a href="#" target="_blank">Elder Bridge</a>
 </span></div></div></div>
 <div class="main-container" id="main">
     <div class="popular-searches clearfix">
         
         <ul class="clearfix first">
           <li>
-            <a href="calls.html" target="_top" onmouseover="changeStatus('option');return true;" onmouseout="changeStatus('');return true;" onclick="if(typeof(showPop) != 'undefined')showPop=0;return modifyKeywordClickURL(this, 'kwclk');;" title="option" id="dk3" name="dk3">Contacts</a>
+            <a href="calls.html">Contacts</a>
         </li>
             <li>
-              <a href="APPS.HTML" target="_top" onmouseover="changeStatus('option');return true;" onmouseout="changeStatus('');return true;" onclick="if(typeof(showPop) != 'undefined')showPop=0;return modifyKeywordClickURL(this, 'kwclk');;" title="option" id="dk3" name="dk3">Apps</a>
+              <a href="APPS.HTML" >Apps</a>
           </li>
             <li>
-                <a href="#" target="_top" onmouseover="changeStatus('option');return true;" onmouseout="changeStatus('');return true;" onclick="if(typeof(showPop) != 'undefined')showPop=0;return modifyKeywordClickURL(this, 'kwclk');;" title="option" id="dk3" name="dk3">option3</a>
+                <a href="https://open.spotify.com/" >Music</a>
             </li>
             <li>
-              <a href="#" target="_top" onmouseover="changeStatus('option');return true;" onmouseout="changeStatus('');return true;" onclick="if(typeof(showPop) != 'undefined')showPop=0;return modifyKeywordClickURL(this, 'kwclk');;" title="option" id="dk3" name="dk3">option4</a>
+              <a href="#">option4</a>
           </li>
           <li>
-            <a href="#" target="_top" onmouseover="changeStatus('option');return true;" onmouseout="changeStatus('');return true;" onclick="if(typeof(showPop) != 'undefined')showPop=0;return modifyKeywordClickURL(this, 'kwclk');;" title="option" id="dk3" name="dk3">option5</a>
+            <a href="#" >option5</a>
         </li>
         </ul>
     </div>
     
 </div>
+
+<button id="emergency-button" onclick="makeEmergencyCall()">Emergency Call</button>
+
+  <script>
+    function makeEmergencyCall() {
+      // Replace the phone number with the actual emergency number (e.g., 911)
+      window.location.href = 'tel:911';
+    }
+  </script>
 
 </div>
 
