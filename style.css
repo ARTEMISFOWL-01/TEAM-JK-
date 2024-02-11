@@ -312,24 +312,7 @@ ul.privacy li a:hover {
     padding: 0 !important
 }
 
-#trademark-footer {
-    padding: 15px 0;
-    text-align: center;
-    font-size: 12px;
-    background-color: #232a33;
-    margin-bottom: 20px
-}
 
-
-.trademark-foottxt a {
-    color: #ffffff;
-    font-size: 13px;
-    line-height: 28px;
-}
-
-.trademark-foottxt a:hover {
-    text-decoration: underline
-}
 
 @media only screen and (max-width: 768px) {
     #trademark-footer {
