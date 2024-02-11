@@ -1,235 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elderly Community</title>
-  <style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.container {
-  max-width: 400px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-h2 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #333;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="password"],
-textarea {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-textarea:focus {
-  border-color: #007bff;
-}
-
-button {
-  padding: 10px;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.link {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.link:hover {
-  color: #0056b3;
-}
-
-#profilePage {
-  text-align: center;
-}
-
-#messageContainer {
-  max-height: 200px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #f8f9fa;
-  margin-top: 20px;
-}
-
-#messageContainer div {
-  margin-bottom: 5px;
-}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="chat.css">
+  <title>Elderly Community</title>
+  
 </head>
 <body>
-  <div class="container" id="loginPage">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required><br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br>
-      <button type="submit">Login</button>
-    </form>
-    <p>Don't have an account? <a href="#" class="link" id="signupLink">Sign Up</a></p>
-  </div>
+  <div class="container" id="loginPage">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#" class="link" id="signupLink">Sign Up</a></p>
+  </div>
 
-  <div class="container" id="signupPage" style="display: none;">
-    <h2>Sign Up</h2>
-    <form id="signupForm">
-      <label for="newUsername">Username:</label>
-      <input type="text" id="newUsername" name="newUsername" required><br>
-      <label for="newPassword">Password:</label>
-      <input type="password" id="newPassword" name="newPassword" required><br>
-      <button type="submit">Sign Up</button>
-    </form>
-    <p>Already have an account? <a href="#" class="link" id="loginLink">Login</a></p>
-  </div>
+  <div class="container" id="signupPage" style="display: none;">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <label for="newUsername">Username:</label>
+      <input type="text" id="newUsername" name="newUsername" required><br>
+      <label for="newPassword">Password:</label>
+      <input type="password" id="newPassword" name="newPassword" required><br>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="#" class="link" id="loginLink">Login</a></p>
+  </div>
 
-  <div class="container" id="profilePage" style="display: none;">
-    <h2>Welcome, <span id="currentUser"></span>!</h2>
-    <button id="logoutButton">Logout</button><br><br>
-    <h3>Edit Profile</h3>
-    <form id="profileForm">
-      <label for="displayName">Display Name:</label>
-      <input type="text" id="displayName" name="displayName" required><br>
-      <label for="bio">Bio:</label><br>
-      <textarea id="bio" name="bio"></textarea><br>
-      <button type="submit">Save</button>
-    </form>
-    <hr>
-    <h3>Messages</h3>
-    <div id="messageContainer"></div>
-    <form id="messageForm">
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" required></textarea><br>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+  <div class="container" id="profilePage" style="display: none;">
+    <h2>Welcome, <span id="currentUser"></span>!</h2>
+    <button id="logoutButton">Logout</button><br><br>
+    <h3>Edit Profile</h3>
+    <form id="profileForm">
+      <label for="displayName">Display Name:</label>
+      <input type="text" id="displayName" name="displayName" required><br>
+      <label for="bio">Bio:</label><br>
+      <textarea id="bio" name="bio"></textarea><br>
+      <button type="submit">Save</button>
+    </form>
+    <hr>
+    <h3>Messages</h3>
+    <div id="messageContainer"></div>
+    <form id="messageForm">
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" required></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+  </div>
 
-  <script>
-// Simulated database to store user information
-const users = [];
-
-// Function to switch between login, signup, and profile pages
-function showPage(pageId) {
-  const pages = ['loginPage', 'signupPage', 'profilePage'];
-  pages.forEach(page => {
-    document.getElementById(page).style.display = (page === pageId) ? 'block' : 'none';
-  });
-}
-
-// Event listener for signup link
-document.getElementById('signupLink').addEventListener('click', function(event) {
-  event.preventDefault();
-  showPage('signupPage');
-});
-
-// Event listener for login link
-document.getElementById('loginLink').addEventListener('click', function(event) {
-  event.preventDefault();
-  showPage('loginPage');
-});
-
-// Event listener for signup form submission
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const newUsername = document.getElementById('newUsername').value;
-  const newPassword = document.getElementById('newPassword').value;
-  // Create new user object and add to the database
-  const newUser = { username: newUsername, password: newPassword, displayName: newUsername, bio: '' };
-  users.push(newUser);
-  alert('Account created successfully! Please login.');
-  showPage('loginPage');
-});
-
-// Event listener for login form submission
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  // Check if username and password match any user in the database
-  const currentUser = users.find(user => user.username === username && user.password === password);
-  if (currentUser) {
-    // Show profile page and display user information
-    document.getElementById('currentUser').innerText = currentUser.displayName;
-    document.getElementById('displayName').value = currentUser.displayName;
-    document.getElementById('bio').value = currentUser.bio;
-    showPage('profilePage');
-  } else {
-    alert('Invalid username or password. Please try again.');
-  }
-});
-
-// Event listener for logout button
-document.getElementById('logoutButton').addEventListener('click', function() {
-  showPage('loginPage');
-});
-
-// Event listener for profile form submission
-document.getElementById('profileForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const newDisplayName = document.getElementById('displayName').value;
-  const newBio = document.getElementById('bio').value;
-  // Update current user's display name and bio
-  currentUser.displayName = newDisplayName;
-  currentUser.bio = newBio;
-  document.getElementById('currentUser').innerText = newDisplayName;
-  alert('Profile updated successfully!');
-});
-
-// Event listener for message form submission
-document.getElementById('messageForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const message = document.getElementById('message').value;
-  // Display the message in the message container
-  const messageElement = document.createElement('div');
-  messageElement.innerText = currentUser.displayName + ': ' + message;
-  document.getElementById('messageContainer').appendChild(messageElement);
-  // Clear the message input field
-  document.getElementById('message').value = '';
-});
-  </script>
+  <script src="chat.js"></script>
 </body>
 </html>
+
