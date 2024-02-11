@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News Updates</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <div id="news-container">
+        <!-- News articles will be dynamically added here -->
+    </div>
+
+    <script>
+        // JavaScript code to fetch and display news articles
+        document.addEventListener("DOMContentLoaded", function() {
+            fetchNews();
+        });
+
+        async function fetchNews() {
+            try {
+                const apiKey = '1ff8df9939d3474b943e735e68b1f414'; // Replace 'YOUR_NEWSAPI_ORG_API_KEY' with your actual API key
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
+                const data = await response.json();
+
+                // Assuming the response data is in JSON format with an array of news articles
+                const articles = data.articles;
+
+                // Clear previous news articles
+                document.getElementById('news-container').innerHTML = '';
+
+                // Display each news article
+                articles.forEach(article => {
+                    const articleElement = createArticleElement(article);
+                    document.getElementById('news-container').appendChild(articleElement);
+                });
+            } catch (error) {
+                console.error('Error fetching news:', error);
+            }
+        }
+
+        function createArticleElement(article) {
+            const articleElement = document.createElement('div');
+            articleElement.classList.add('article');
+
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = article.title;
+            articleElement.appendChild(titleElement);
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = article.description;
+            articleElement.appendChild(descriptionElement);
+
+            const sourceElement = document.createElement('p');
+            sourceElement.textContent = `Source: ${article.source.name}`;
+            articleElement.appendChild(sourceElement);
+
+            const publishedAtElement = document.createElement('p');
+            publishedAtElement.textContent = `Published At: ${article.publishedAt}`;
+            articleElement.appendChild(publishedAtElement);
+
+            // You can add more elements like image, author, etc. as needed
+
+            return articleElement;
+        }
+    </script>
+</body>
+</html>
