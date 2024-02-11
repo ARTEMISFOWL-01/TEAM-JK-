@@ -1,69 +1,55 @@
+body {
+  background-color: #f7f7f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
 
-    body {
-      background-color: #f7f7f7;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      margin: 50px;
-    }
+.phone-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3498db;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
 
-    .phone-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #3498db;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-      cursor: pointer;
-      margin-bottom: 20px;
-    }
+.phone-icon {
+  color: #ffffff;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-    .phone-icon {
-      color: #ffffff;
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+.phone-number {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 
-    .phone-number {
-      color: #ffffff;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
+.person-name {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-    .person-name {
-      color: #ffffff;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+.call-button {
+  background-color: #2ecc71;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    .call-button {
-      background-color: #2ecc71;
-      color: #ffffff;
-      padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+.call-button:hover {
+  background-color: #27ae60;
+}
 
-    .call-button:hover {
-      background-color: #27ae60;
-    }
-
-    .contact {
-        display: flex;
-        justify-content: space-between; /* Adjust as needed */
-        align-items: center; /* Adjust as needed */
-        background-color: #f0f0f0;
-        padding: 20px;
-      }
-  
-      /* Style individual items within the flex container if needed */
-      .phone-container {
-        margin: 10px;
-        padding: 10px;
-        border: 1px solid #ddd;
-      }
+      
