@@ -5,7 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest News Updates</title>
     <style>
-        /* Add your CSS styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        #news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .article {
+            max-width: 300px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -14,7 +51,6 @@
     </div>
 
     <script>
-        // JavaScript code to fetch and display news articles
         document.addEventListener("DOMContentLoaded", function() {
             fetchNews();
         });
@@ -61,10 +97,9 @@
             publishedAtElement.textContent = `Published At: ${article.publishedAt}`;
             articleElement.appendChild(publishedAtElement);
 
-            // You can add more elements like image, author, etc. as needed
-
             return articleElement;
         }
     </script>
 </body>
 </html>
+
