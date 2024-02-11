@@ -85,7 +85,7 @@
     }
 
     // Set up an interval to show the water reminder (you can change this to trigger based on your requirements)
-    setInterval(showWaterReminder, 60000);
+    setInterval(showWaterReminder, 3600000);
 </script>
 
 <div id="alertMessage">
@@ -106,12 +106,12 @@
       // Set interval to display reminder every minute
       remindInterval = setInterval(function() {
         speak("Please respond to the alert!");
-      }, 60000); // 1 minute
+      }, 3600000); // 1 minute
 
       // Set timeout to make emergency call after 10 seconds
       emergencyTimeout = setTimeout(function() {
         makeEmergencyCall();
-      }, 10000); // 10 seconds
+      }, 100000); // 10 seconds
     }
 
     function respond() {
@@ -126,7 +126,7 @@
       // Set timeout for next alert after 9 seconds
       nextAlertTimeout = setTimeout(function() {
         showNotification();
-      }, 9000); // 9 seconds
+      }, 90000); // 9 seconds
     }
 
     function makeEmergencyCall() {
@@ -135,7 +135,7 @@
       // Set timeout for next alert after 9 seconds
       nextAlertTimeout = setTimeout(function() {
         showNotification();
-      }, 9000); // 9 seconds
+      }, 90000); // 9 seconds
     }
 
     function speak(message) {
