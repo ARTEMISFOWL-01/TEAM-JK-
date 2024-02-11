@@ -5,7 +5,7 @@
             
         
         <meta name="tids" content="a='29591' b='33549' c='slide.ai' d='manual_mapped'"/>
-        <title>title.win</title>
+        <title>Elder Bridge</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -38,14 +38,11 @@
               <a href="APPS.HTML" >Apps</a>
           </li>
             <li>
-                <a href="https://open.spotify.com/" >Music</a>
+                <a href="https://open.spotify.com/playlist/0RboI0UiKV0GUbABkTDnEb" >Music</a>
             </li>
             <li>
               <a href="#">option4</a>
           </li>
-          <li>
-            <a href="#" >option5</a>
-        </li>
         </ul>
     </div>
     
@@ -62,6 +59,100 @@
   </script>
 
 </div>
+
+<div id="notification">
+    <p id="notification-message"></p>
+</div>
+
+<script>
+    function showWaterReminder() {
+        var notification = document.getElementById('notification');
+        var notificationMessage = document.getElementById('notification-message');
+
+        // Set the notification message
+        notificationMessage.textContent = "It's time for medication!";
+
+        notification.style.display = 'block';
+
+        // Speak the alert message
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = "It's time for medication!";
+        speechSynthesis.speak(msg);
+
+        setTimeout(function () {
+            notification.style.display = 'none';
+        }, 60000); // Display the notification for 1 minute (adjust as needed)
+    }
+
+    // Set up an interval to show the water reminder (you can change this to trigger based on your requirements)
+    setInterval(showWaterReminder, 60000);
+</script>
+
+<div id="alertMessage">
+    <p>It's time to respond to the alert! Click here to respond.</p>
+  </div>
+
+  <script>
+    let remindInterval;
+    let emergencyTimeout;
+    let nextAlertTimeout;
+
+    function showNotification() {
+      document.getElementById('alertMessage').style.display = 'block';
+
+      // Speak the alert message
+      speak('It\'s time to respond to the alert! Click here to respond.');
+
+      // Set interval to display reminder every minute
+      remindInterval = setInterval(function() {
+        speak("Please respond to the alert!");
+      }, 60000); // 1 minute
+
+      // Set timeout to make emergency call after 10 seconds
+      emergencyTimeout = setTimeout(function() {
+        makeEmergencyCall();
+      }, 10000); // 10 seconds
+    }
+
+    function respond() {
+      // Clear reminder interval
+      clearInterval(remindInterval);
+      // Clear emergency timeout
+      clearTimeout(emergencyTimeout);
+      // Hide alert message
+      document.getElementById('alertMessage').style.display = 'none';
+      // Speak the response
+      speak('Thank you for responding!');
+      // Set timeout for next alert after 9 seconds
+      nextAlertTimeout = setTimeout(function() {
+        showNotification();
+      }, 9000); // 9 seconds
+    }
+
+    function makeEmergencyCall() {
+      // Code to make emergency call goes here
+      speak('Emergency call initiated!');
+      // Set timeout for next alert after 9 seconds
+      nextAlertTimeout = setTimeout(function() {
+        showNotification();
+      }, 9000); // 9 seconds
+    }
+
+    function speak(message) {
+      // Speak the provided message using the Web Speech API
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = message;
+      speechSynthesis.speak(msg);
+    }
+
+    // Attach event listener to the alert message element
+    document.getElementById('alertMessage').addEventListener('click', respond);
+
+    // Call showNotification function when the page loads
+    window.onload = function() {
+      showNotification();
+    };
+  </script>
 
 
 </body></html>
